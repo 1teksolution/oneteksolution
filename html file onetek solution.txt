@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>One Tek Solutions — Electronics, Custom Systems, Web, Power Electronics</title>
+  <meta name="description" content="Delhi-based One Tek Solutions supplies electronic components, delivers custom engineering and web solutions, and manufactures SMPS, DC-DC converters, inverters, and chargers.">
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,600;1,600&display=swap)" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Professional palette */
+      --bg:#0b1020;         /* deep navy */
+      --surface:#0f152b;    /* elevated panels */
+      --ink:#e6e9ef;        /* main text */
+      --ink-soft:#a8b0bf;   /* muted text */
+      --primary:#3b82f6;    /* royal blue */
+      --primary-ink:#07122d;
+      --accent:#10b981;     /* emerald for highlights */
+      --line:#1f2a44;       /* borders */
+      --radius:14px;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1400px 700px at 10% -10%,#0a1430 0%,#0b1020 50%,#070c1a 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:#93c5fd;text-decoration:none}
+    a:hover{opacity:.9}
+    .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:linear-gradient(180deg,#0b1120dd,#0b112000)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .mark{width:36px;height:36px;border-radius:10px;background:
+      conic-gradient(from 220deg,#3b82f6,#10b981,#22d3ee,#3b82f6);box-shadow:0 6px 18px #3b82f633}
+    .nav a{color:var(--ink);margin:0 10px;font-weight:600;opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#eaf2ff;border:1px solid #3b82f6;border-radius:999px;padding:10px 16px;font-weight:700;box-shadow:0 10px 24px #1d4ed833;transition:transform .06s ease, box-shadow .2s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px #1d4ed855}
+    .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+    /* Hero */
+    .hero{padding:40px 0 20px}
+    .hero-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+    @media (max-width:980px){.hero-wrap{grid-template-columns:1fr}}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-left{padding:28px}
+    .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#0d1631;border-radius:999px;color:#c7d2fe;padding:6px 10px;font-size:12px;font-weight:700}
+    h1{font-size:clamp(30px,4.5vw,52px);line-height:1.1;margin:12px 0 10px;font-weight:800;letter-spacing:-.02em}
+    .lead{color:var(--ink-soft);font-size:clamp(15px,2.2vw,18px)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    @media (max-width:680px){.kpis{grid-template-columns:1fr 1fr}}
+    .kpi{background:#0b132a;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+    .hero-right{padding:0;overflow:hidden}
+    .hero-right img{display:block;width:100%;height:100%;object-fit:cover;min-height:240px}
+    /* Sections */
+    section{padding:36px 0}
+    h2{font-size:clamp(22px,3vw,30px);margin:0 0 14px}
+    .section-intro{color:var(--ink-soft);margin-top:-4px;margin-bottom:16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}}
+    .tile{padding:18px}
+    .tile h3{margin:4px 0 6px}
+    .list{margin:8px 0 0 0;padding:0;list-style:none}
+    .list li{margin:6px 0;color:#cad4e3}
+    /* Capability matrix */
+    .matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .badge{display:inline-block;background:#0c1a36;border:1px solid var(--line);color:#9cc9ff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}
+    .muted{color:var(--ink-soft)}
+    /* Projects */
+    .proj{display:flex;flex-direction:column;gap:8px}
+    .proj .meta{font-family:"Source Serif 4",serif;font-style:italic;color:#cbd5e1}
+    /* Contact */
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){form .row{grid-template-columns:1fr}}
+    input,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);background:#0a1429;color:var(--ink);outline:2px solid transparent}
+    input:focus,textarea:focus{outline-color:#3b82f680}
+    .contact-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    @media (max-width:980px){.contact-wrap{grid-template-columns:1fr}}
+    /* Footer */
+    footer{border-top:1px solid var(--line);color:#9aa7bd;padding:28px 0 60px;text-align:center}
+  </style>
+
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX) -->
+  <script async src="[googletagmanager.com](https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX)"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <span>One Tek Solutions</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="[wa.me](https://wa.me/919717753193)" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div class="card hero-left">
+          <span class="kicker">Electronics • Systems • Web • Power</span>
+          <h1>Engineering and digital solutions that stand up in production.</h1>
+          <p class="lead">Delhi‑based team supplying components, delivering custom hardware/firmware systems and modern web experiences, and manufacturing power electronics — SMPS, DC‑DC, inverters, and chargers.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Request a quote</a>
+            <a class="btn ghost" href="#services">Explore services</a>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><strong>Fast sourcing</strong><br><span class="muted">Local + global vendors</span></div>
+            <div class="kpi"><strong>Built to spec</strong><br><span class="muted">Prototype → production</span></div>
+            <div class="kpi"><strong>Accountability</strong><br><span class="muted">Docs & QC included</span></div>
+          </div>
+        </div>
+        <div class="card hero-right" role="img" aria-label="Electronics">
+          <img alt="Close-up of electronic circuit board" src="[images.unsplash.com](https://images.unsplash.com/photo-1581093588401-16f3a9c3a1d2?q=80&w=1600&auto=format&fit=crop)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="section-intro">One Tek Solutions is owned by <strong>Kalpana Chaudhary</strong>. We combine component distribution, custom engineering, and web development with in‑house power‑electronics capability.</p>
+      <div class="card tile">
+        <div class="matrix">
+          <div>
+            <span class="badge">Supply</span>
+            <p class="muted" style="margin:8px 0 0">Semiconductors, passives, modules, accessories, BOM checks.</p>
+          </div>
+          <div>
+            <span class="badge">Engineering</span>
+            <p class="muted" style="margin:8px 0 0">Hardware + firmware + enclosure; validation and documentation.</p>
+          </div>
+          <div>
+            <span class="badge">Web</span>
+            <p class="muted" style="margin:8px 0 0">Corporate, e‑commerce, portals; performance‑first, SEO‑ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="section-intro">Clear scopes, transparent timelines, market‑linked pricing via request‑quote.</p>
+      <div class="grid">
+        <div class="card tile">
+          <h3>Electronic Components</h3>
+          <ul class="list">
+            <li>BOM sourcing, alternates, lead‑time planning</li>
+            <li>Semiconductors, passives, modules, accessories</li>
+            <li>WhatsApp/email quotes with availability</li>
+          </ul>
+        </div>
+        <div class="card tile">
+          <h3>Custom Projects & Systems</h3>
+          <ul class="list">
+            <li>System design: hardware, firmware, enclosure</li>
+            <li>Prototyping, testing, certification guidance</li>
+            <li>Handover docs and after‑sales support</li>
+          </ul>
+        </div>
+        <div class="card tile">
+          <h3>Web Design & Development</h3>
+          <ul class="list">
+            <li>Corporate sites, e‑commerce, portals</li>
+            <li>Responsive UI, performance, SEO basics</li>
+            <li>Payments, logistics, CRM integrations</li>
+          </ul>
+        </div>
+        <div class="card tile">
+          <h3>Power Electronics Manufacturing</h3>
+          <ul class="list">
+            <li>SMPS (12V/24V/48V) — custom ratings</li>
+            <li>DC‑DC converters — buck/boost/buck‑boost</li>
+            <li>Inverters & smart chargers with protection</li>
+          </ul>
+        </div>
+        <div class="card tile">
+          <h3>Import & Export</h3>
+          <ul class="list">
+            <li>Semiconductors and power electronics</li>
+            <li>Compliance, customs, documentation</li>
+            <li>Bulk and scheduled deliveries</li>
+          </ul>
+        </div>
+        <div class="card tile">
+          <h3>Engagement & Delivery</h3>
+          <ul class="list">
+            <li>Quote in 24–48 hours (typical)</li>
+            <li>Weekly progress summaries</li>
+            <li>Warranty and support options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p class="section-intro">Representative work across supply, engineering, and manufacturing.</p>
+      <div class="grid">
+        <div class="card tile proj">
+          <h3>Industrial SMPS Deployment</h3>
+          <div class="meta">12V/24V units, site validation, documentation</div>
+          <p class="muted">Sourced, tested, and rolled out power supplies with QC and reports.</p>
+        </div>
+        <div class="card tile proj">
+          <h3>Custom DC‑DC for IoT</h3>
+          <div class="meta">Compact buck‑boost for battery devices</div>
+          <p class="muted">Designed for efficiency and low ripple; prototype to pilot production.</p>
+        </div>
+        <div class="card tile proj">
+          <h3>Commerce Site + CRM</h3>
+          <div class="meta">High‑performance storefront with lead capture</div>
+          <p class="muted">Fast UI, SEO setup, WhatsApp triage, and CRM integration.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px;overflow:hidden;height:280px">
+        <img alt="Engineer assembling electronics" style="width:100%;height:100%;object-fit:cover"
+             src="[images.unsplash.com](https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop)">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="section-intro">Tell us what you need — components, a build, a site, or power products — and we’ll reply with availability and timelines.</p>
+      <div class="contact-wrap">
+        <div class="card tile">
+          <form name="contact" netlify>
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="Your name">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="row" style="margin-top:12px">
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 9xxxxxxxxx">
+              </div>
+              <div>
+                <label for="service">Requirement</label>
+                <input id="service" name="service" placeholder="Components / Project / Web / Power">
+              </div>
+            </div>
+            <div style="margin-top:12px">
+              <label for="msg">Message</label>
+              <textarea id="msg" name="message" rows="4" placeholder="Share your part list or brief"></textarea>
+            </div>
+            <div class="cta" style="margin-top:14px">
+              <button class="btn" type="submit">Send enquiry</button>
+              <a class="btn ghost" href="[wa.me](https://wa.me/919717753193)" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <p class="muted" style="margin-top:8px;font-size:12px">Alternate: +91 85058 07245 (A. Chaudhary)</p>
+          </form>
+        </div>
+        <div class="card tile">
+          <h3>Company Details</h3>
+          <p><strong>Name:</strong> One Tek Solutions</p>
+          <p><strong>Owner:</strong> Kalpana Chaudhary</p>
+          <p><strong>Contact:</strong> A. Chaudhary — <a href="tel:+919717753193">+91 97177 53193</a>, <a href="tel:+918505807245">+91 85058 07245</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@oneteksolutions.in">info@oneteksolutions.in</a> · <a href="mailto:sales@oneteksolutions.in">sales@oneteksolutions.in</a> · <a href="mailto:contact@oneteksolutions.in">contact@oneteksolutions.in</a></p>
+          <p><strong>Address:</strong> Delhi, India</p>
+          <div style="height:220px;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-top:8px">
+            <iframe title="Map" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+              src="[maps.google.com](https://maps.google.com/maps?q=Delhi&t=&z=11&ie=UTF8&iwloc=&output=embed)"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="y"></span> One Tek Solutions. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
